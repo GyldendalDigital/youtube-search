@@ -1,0 +1,20 @@
+<h2>YouTube search</h2>
+
+<form class="form-inline">
+    <div class="form-group">
+        <label>Search for:</label>
+        <input type="text" class="form-control" data-bind="value: q" />
+    </div>
+    <button type="submit" class="btn btn-primary">
+        <i class="glyphicon glyphicon-search"></i>
+        Search
+    </button>
+</form>
+
+<hr/>
+
+<h3 data-bind="if: v().length > 0">Results: <span data-bind="text: v().length"></span></h3>
+
+<div data-bind="foreach: v">
+    <youtube-video params="video: $data"></youtube-video>
+</div>
